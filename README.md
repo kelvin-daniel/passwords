@@ -11,6 +11,9 @@ This is an application that allows users to save passwords of their various soci
 
 Python 3
 
+## Dependencies
+Ensure you have a text editor installed in your device eg. sublime, vscode, atom etc.
+
 ## Application requirements
 
 1. Ensure you have Python3 installed in your computer. If not, you can download it by running the following command on the terminal:
@@ -38,12 +41,13 @@ Run this command to open the app
 | User types in del | Deletes account credentials|
 | User types in ca | To create an account|
 | User types in li | Allows the user to login|
+|
 
 ## TDD
 
 -To test the app, run this commands in the terminal;
 
-`$ python3.6 passwords_test.py`
+`$ python3 passwords_test.py`
 
 ## Live link
 
@@ -57,4 +61,4 @@ kaymutor@gmail.com
 
 MIT License
 
-Copyright (c) [2018] [David Watibini Makhanu]
+Copyright (c) 2020 [Kelvin Kiplagat](https://github.com/kelvin-daniel/passwords.git)
