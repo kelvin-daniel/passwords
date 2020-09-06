@@ -191,7 +191,7 @@ Password:{password}''')
         else:
             print("Please Enter a Valid Code to Proceed")
     else:
-        print("Please enter a valid input to continue")
+        print("Please Enter a Valid Code to Proceed")
 
 if __name__ == '__main__':
     main()
