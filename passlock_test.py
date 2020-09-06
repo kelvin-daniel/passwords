@@ -76,7 +76,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
 
-    def test_find_credentialr(self):
+    def test_find_credentials(self):
         """
         test to check if we can find a credential entry by account name
         """
