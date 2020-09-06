@@ -101,7 +101,7 @@ Use the following commands to navigate the app.
             else:
                 print("Invalid password please try again")
                 save_user(create_new_user(username, password))
-                print(f"Hi {username}, Your account has been created succesfully!)
+                print(f"Hi {username}, Your account has been created succesfully!")
 
     elif short_code == "li":
         username = input("Username: ")
