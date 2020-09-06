@@ -9,15 +9,15 @@ This is an application that allows users to save passwords of their various soci
 
 ## Technologies Used
 
-Python 3.6
+Python 3
 
 ## Application requirements
 
-1. Ensure you have Python3.6 installed in your computer. you can download it by running this command
+1. Ensure you have Python3 installed in your computer. If not, you can download it by running the following command on the terminal:
 
 `$ sudo apt-get update sudo apt-get install python3.6.`
 
-2. Ensure you have PiP installed in your computer, you can download it by running this command:
+2. Ensure you also have PiP installed on your device or install it by runnnning the command below on your terminal:
 
 `$ python get-pip.py`
 
