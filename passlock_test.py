@@ -100,9 +100,8 @@ class TestCredentials(unittest.TestCase):
 
     def test_display_all_saved_credentials(self):
         '''
-        method that displays all the credentials that has been saved by the user
+        method that displays all the credentials that have been saved by the user
         '''
-
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
 if __name__ == "__main__":
