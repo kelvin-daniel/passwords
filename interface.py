@@ -69,8 +69,7 @@ def generate_Password():
     '''
     generates a random password for the user.
     '''
-    auto_password=Credentials.generatePassword()
-    return auto_password
+    return auto_password.generatePassword()
 
 def copy_password(account):
     """
