@@ -10,46 +10,42 @@ class TestClass(unittest.TestCase):
         """
         Method that runs before each individual test methods run.
         """
-        self.new_user = User('OwitiCharles','XyZ3thf1')
+        self.new_user = User('Kelvin','09876')
 
     def test_init(self):
         """
         test case to chek if the object has been initialized correctly
         """
-        self.assertEqual(self.new_user.username,'OwitiCharles')
-        self.assertEqual(self.new_user.password,'XyZ3thf1')
+        self.assertEqual(self.new_user.username,'Kelvin')
+        self.assertEqual(self.new_user.password,'09876')
 
     def test_save_user(self):
         """
         test case to test if a new user instance has been saved into the User list
-
         """
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
 
 class TestCredentials(unittest.TestCase):
     """
-    A test class that defines test cases for credentials class
-
+    A test class that defines test cases for the credentials class
     """ 
     def setUp(self):
         """
         Method that runs before each individual credentials test methods run.
-
         """
-        self.new_credential = Credentials('Gmail','Owiti_Charles','yx5Gij43')
+        self.new_credential = Credentials('Instagram','@keazi','iyuM89')
     def test_init(self):
         """
         Test case to check if a new Credentials instance has been initialized correctly
         """
-        self.assertEqual(self.new_credential.account,'Gmail')
-        self.assertEqual(self.new_credential.userName,'Owiti_Charles')
-        self.assertEqual(self.new_credential.password,'yx5Gij43')
+        self.assertEqual(self.new_credential.account,'Instagram')
+        self.assertEqual(self.new_credential.userName,'@keazi')
+        self.assertEqual(self.new_credential.password,'iyuM89')
 
     def save_credential_test(self):
         """
-        test case to test if the crential object is saved into the credentials list.
-
+        test case to test if each crential object is saved into the credentials list.
         """
         self.new_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list),1)
@@ -62,19 +58,19 @@ class TestCredentials(unittest.TestCase):
 
     def test_save_many_accounts(self):
         '''
-        test to check if we can save multiple credentials objects to our credentials list
+        test to check if we can save multiple credentials objects to the credentials list
         '''
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential = Credentials("Twitter","@keazi_","Zdklfl04") 
         test_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list),2)
 
     def test_delete_credential(self):
         """
-        test method to test if we can remove an account credentials from our credentials_list
+        test method to test if we can remove an account credentials from the credentials_list
         """
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk")
+        test_credential = Credentials("Twitter","@keazi_","Zdklfl04")
         test_credential.save_details()
 
         self.new_credential.delete_credentials()
@@ -82,10 +78,10 @@ class TestCredentials(unittest.TestCase):
 
     def test_find_credentialr(self):
         """
-        test to check if we can find a credential entry by account name and display the details of the credential
+        test to check if we can find a credential entry by account name
         """
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential = Credentials("Twitter","@keazi_","Zdklfl04") 
         test_credential.save_details()
 
         the_credential = Credentials.find_credential("Twitter")
@@ -94,7 +90,7 @@ class TestCredentials(unittest.TestCase):
 
     def test_credential_exist(self):
         """
-        test to check if we can return a true or false based on whether we find or can't find the credential.
+        test to check if we can return a boolean based on whether we find or can't find the credential.
         """
         self.new_credential.save_details()
         the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")  
