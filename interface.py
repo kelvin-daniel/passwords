@@ -1,63 +1,67 @@
 #!/usr/bin/env python3.6
 from passlock import User, Credentials
 
-def create_new_user(username,password):
+def create_new_user(username, password):
     '''
     Function to create an instance of a user
     '''
     new_user = User(username, password)
     return new_user
+
 def save_user(user):
     '''
-    Function to save a new user
+    Function that save a new user
     '''
     user.save_user()
+
 def display_user():
     """
-    Function to display existing user
+    Function to display existing users
     """
     return User.display_user()
-def login_user(username,password):
+
+def login_user(username, password):
     """
-    function that checks whether a user exist and then login the user in.
+    function that enables existing users to login.
     """
   
-    check_user = Credentials.verify_user(username,password)
+    check_user = Credentials.verify_user(username, password)
     return check_user
 
-def create_new_credential(account,userName,password):
+def create_new_credential(account, userName, password):
     """
     Function that creates new credentials for a given user account
     """
-    new_credential = Credentials(account,userName,password)
+    new_credential = Credentials(account, userName, password)
     return new_credential
+
 def save_credentials(credentials):
     """
     Function to save Credentials to the credentials list
     """
     credentials. save_details()
+
 def display_accounts_details():
     """
-    Function that returns all the saved credential.
+    Function that displays saved credential.
     """
     return Credentials.display_credentials()
 
 def delete_credential(credentials):
     """
-    Function to delete a Credentials from credentials list
-
+    Function to delete a Credentials from the credentials list
     """
     credentials.delete_credentials()
 
 def find_credential(account):
     """
-    Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+    Function that finds Credentials of an account by account name
     """
     return Credentials.find_credential(account)
+
 def check_credendtials(account):
     """
-    Function that check if a Credentials exists with that account name and return true or false
-
+    Function that checks if Credentials exists with an account name and return a boolean
     """
     return Credentials.if_credential_exist(account)
 
@@ -67,16 +71,20 @@ def generate_Password():
     '''
     auto_password=Credentials.generatePassword()
     return auto_password
+
 def copy_password(account):
     """
-    A funct that copies the password using the pyperclip framework
-    We import the framework then declare a function that copies the emails.
+    A function that allows users to copy password using pyperclip.
     """
     return Credentials.copy_password(account)
 
-
-def passlocker():
-    print("Hello Welcome to your Accounts Password Store...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
+def main():
+    print('''
+Hi! Welcome to passwords
+Use the following commands to navigate the app.
+1. 'ca' ---->  Create an Account  
+2. 'li' ---->  Have an Account 
+        ''')
     short_code=input("").lower().strip()
     if short_code == "ca":
         print("Sign Up")
@@ -93,10 +101,10 @@ def passlocker():
                 break
             else:
                 print("Invalid password please try again")
-        save_user(create_new_user(username,password))
-        print("*"*85)
-        print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
-        print("*"*85)
+                save_user(create_new_user(username,password))
+                print("*"*85)
+                print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
+                print("*"*85)
     elif short_code == "li":
         print("*"*50)
         print("Enter your User name and your Password to log in:")
@@ -128,10 +136,10 @@ def passlocker():
                     break
                 else:
                     print("Invalid password please try again")
-            save_credentials(create_new_credential(account,userName,password))
-            print('\n')
-            print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
-            print('\n')
+                    save_credentials(create_new_credential(account,userName,password))
+                    print('\n')
+                    print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
+                    print('\n')
         elif short_code == "dc":
             if display_accounts_details():
                 print("Here's your list of acoounts: ")
@@ -182,4 +190,4 @@ def passlocker():
         print("Please enter a valid input to continue")
 
 if __name__ == '__main__':
-    passlocker()
+    main()
