@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-from passlock import User, Credentials
+from passwords import User, Credentials
 
 def create_new_user(username, password):
     '''
@@ -163,9 +163,9 @@ Password:{password}''')
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
                 print(f"Account Name : {search_credential.account}")
-                print('-' * 50)
+                print('\n')
                 print(f"User Name: {search_credential.userName} Password :{search_credential.password}")
-                print('-' * 50)
+                print('\n')
             else:
                 print("That Credential does not exist")
                 print('\n')
