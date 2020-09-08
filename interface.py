@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
 from passwords import User, Credentials
+import random
+import string
 
 def create_new_user(username, password):
     '''
@@ -65,12 +67,6 @@ def check_credendtials(account):
     """
     return Credentials.if_credential_exist(account)
 
-def generate_Password():
-    '''
-    generates a random password for the user.
-    '''
-    return auto_password.generatePassword()
-
 def copy_password(account):
     """
     A function that allows users to copy password using pyperclip.
@@ -95,7 +91,7 @@ Use the following commands to navigate the app.
                 password = input("Enter Password:")
                 break
             elif password_Choice == 'g':
-                password = generate_Password()
+                
                 break
             else:
                 print("Invalid password please try again")
@@ -133,7 +129,12 @@ Use the following commands to navigate the app:
                     password = input("Enter a Password\n")
                     break
                 elif password_Choice == 'g':
-                    password = generate_Password()
+                    print('Enter password length')
+                    l= int(input())
+                    characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+                    password =''.join(random.choice(characters) for i in range(l))
+
+
                     break
                 else:
                     print("Invalid password please try again")
@@ -181,8 +182,11 @@ Password:{password}''')
                 print("That credential is unavailable for deletion.")
 
         elif short_code == 'g':
+            print('Enter password length')
+            l= int(input())
+            characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+            password =''.join(random.choice(characters) for i in range(l))
 
-            password = generate_Password()
             print(f" {password} is now the password for your account")
         elif short_code == 'x':
             print("Thank you for choosing passwords!")

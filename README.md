@@ -12,7 +12,7 @@ This is an application that allows users to save passwords of their various soci
 Python 3
 
 ## Dependencies
-Ensure you have a text editor installed in your device eg. sublime, vscode, atom etc.
+Ensure you have a text editor installed in your device eg. vscode, atom etc. or any type of terminal
 
 ## Application requirements
 
